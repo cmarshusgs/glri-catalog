@@ -2,7 +2,7 @@
    "title":"${name}",
    "summary":"${description}",
    "body":"${description}",
-   "purpose":"Test Record ${ds_id} (purpose)",
+   "purpose":"${purpose}",
    "parentId":"${community-id}",
    "spatial":{
       "representationalPoint":"${representationalPointX},${representationalPointY}",
@@ -18,47 +18,47 @@
       {
          "name":"${piName}",
          "type":"Principle Investigator",
-         "email":"pi_email@usgs.gov",
+         "email":"${email}",
          "organization":{
             "displayText":"USGS"
          },
          "primaryLocation":{
-            "officePhone":"(123) 123-1234",
+            "officePhone":"",
             "streetAddress":{
 
             },
             "mailAddress":{
-               "line1":"Natural Resources, 480 Wilson Rd. Rm 13",
-               "city":"East Lansing",
-               "state":"MI",
-               "zip":"48824"
+               "line1":"",
+               "city":"",
+               "state":"",
+               "zip":""
             }
          }
       },
       {
          "name":"${apcName}",
          "type":"Associate Project Chief",
-         "email":"apc_email@usgs.gov",
+         "email":"",
          "organization":{
             "displayText":"USGS"
          },
          "primaryLocation":{
-            "officePhone":"(123) 123-1234",
+            "officePhone":"",
             "streetAddress":{
 
             },
             "mailAddress":{
-               "line1":"Natural Resources, 480 Wilson Rd. Rm 13",
-               "city":"East Lansing",
-               "state":"MI",
-               "zip":"48824"
+               "line1":"",
+               "city":"",
+               "state":"",
+               "zip":""
             }
          }
       },
       {
-         "name":"${cpName1} and others",
+         "name":"${cpName1}",
          "type":"Cooperator/Partner",
-         "email":"poc_email@usgs.gov",
+         "email":"",
          "organization":{
 
          },
@@ -72,9 +72,9 @@
          }
       },
       {
-         "name":"${cpName2} and others",
+         "name":"${cpName2}",
          "type":"Cooperator/Partner",
-         "email":"poc_email@usgs.gov",
+         "email":"",
          "organization":{
 
          },
@@ -88,9 +88,9 @@
          }
       },
       {
-         "name":"${cpName3} and others",
+         "name":"${cpName3}",
          "type":"Cooperator/Partner",
-         "email":"poc_email@usgs.gov",
+         "email":"",
          "organization":{
 
          },
@@ -160,21 +160,24 @@
          "type":"webLink",
          "typeLabel":"Web Link",
          "uri":"${projectWebURL1}",
-         "title":"${projectWebTitle1}",
+         "title":"Project Home Page",
+		 "rel": "home",
          "hidden":false
       },
       {
          "type":"webLink",
          "typeLabel":"Web Link",
          "uri":"${projectWebURL2}",
-         "title":"${projectWebTitle2}",
+         "title":"Related Resource",
+		 "rel": "relatedResouce",
          "hidden":false
       },
       {
          "type":"webLink",
          "typeLabel":"Web Link",
          "uri":"${projectWebURL3}",
-         "title":"${projectWebTitle3}",
+         "title":"Related Resource",
+		 "rel": "relatedResource",
          "hidden":false
       }
    ],
@@ -254,29 +257,24 @@
       },
       {
          "type":"Label",
-         "scheme":"https://www.sciencebase.gov/vocab/GLRI/sigl-project-focus",
-         "name":"${siglFocus}"
-      },
-      {
-         "type":"Label",
          "scheme":"https://www.sciencebase.gov/vocab/GLRI/data-status",
-         "name":"Fake Sample Data"
+         "name":"Uploaded in Batch"
       }
    ],
    "dates":[
       {
-         "type":"Publication",
-         "dateString":"2013",
-         "label":"Publication Date"
-      },
-      {
          "type":"Start",
-         "dateString":"2000",
-         "label":""
+         "dateString":"${projectStartDate}",
+         "label":"Project Start Date"
       },
       {
          "type":"End",
-         "dateString":"2007",
+         "dateString":"${projectEndDate}",
+         "label":"Project End Date"
+      },
+      {
+         "type":"",
+         "dateString":"",
          "label":""
       }
    ],

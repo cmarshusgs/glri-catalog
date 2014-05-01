@@ -53,20 +53,20 @@
           </elementProp>
           <elementProp name="user-name" elementType="Argument">
             <stringProp name="Argument.name">user-name</stringProp>
-            <stringProp name="Argument.value">${__P(user-name,)}</stringProp>
+            <stringProp name="Argument.value">${__P(user-name)}</stringProp>
             <stringProp name="Argument.desc">valid DOI AD complete user name, eg: bthompson@usgs.gov  Req&apos;ed for adding or deleting records.</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="user-pwd" elementType="Argument">
             <stringProp name="Argument.name">user-pwd</stringProp>
-            <stringProp name="Argument.value">${__P(user-pwd,)}</stringProp>
+            <stringProp name="Argument.value">${__P(user-pwd)}</stringProp>
             <stringProp name="Argument.desc">valid DOI AD password.  Req&apos;ed for adding or deleting records.</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
       </Arguments>
       <hashTree/>
-      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Production Variables" enabled="false">
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Production Variables" enabled="true">
         <collectionProp name="Arguments.arguments">
           <elementProp name="community-id" elementType="Argument">
             <stringProp name="Argument.name">community-id</stringProp>
@@ -89,11 +89,11 @@
         </collectionProp>
       </Arguments>
       <hashTree/>
-      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Development Variables" enabled="true">
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Development Variables" enabled="false">
         <collectionProp name="Arguments.arguments">
           <elementProp name="community-id" elementType="Argument">
             <stringProp name="Argument.name">community-id</stringProp>
-            <stringProp name="Argument.value">${__P(community-id,52fa427de4b00c1c71df3a19)}</stringProp>
+            <stringProp name="Argument.value">${__P(community-id,52e6a0a0e4b012954a1a238a)}</stringProp>
             <stringProp name="Argument.desc">id of the GLRI community in ScienceBase</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
@@ -1201,7 +1201,7 @@
             </collectionProp>
           </ModuleController>
           <hashTree/>
-          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Delete all records" enabled="true">
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Delete all records" enabled="false">
             <collectionProp name="ModuleController.node_path">
               <stringProp name="-1227702913">WorkBench</stringProp>
               <stringProp name="764597751">Test Plan</stringProp>
@@ -1296,123 +1296,7 @@
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{&#xd;
-    &quot;title&quot;: &quot;${name}&quot;,&#xd;
-    &quot;summary&quot;: &quot;${description}&quot;,&#xd;
-    &quot;body&quot;: &quot;${description}&quot;,&#xd;
-    &quot;purpose&quot;: &quot;Test Record ${ds_id} (purpose)&quot;,&#xd;
-    &quot;parentId&quot;: &quot;${community-id}&quot;,&#xd;
-    &quot;spatial&quot;: {&#xd;
-        &quot;representationalPoint&quot;: [&#xd;
-            ${representationalPointX},&#xd;
-            ${representationalPointY}&#xd;
-        ],&#xd;
-        &quot;representationalPointIsDerived&quot;: ${representationalPointIsDerived},&#xd;
-        &quot;boundingBox&quot;: {&#xd;
-            &quot;maxY&quot;: ${boundingBoxMaxY},&#xd;
-            &quot;maxX&quot;: ${boundingBoxMaxX},&#xd;
-            &quot;minX&quot;: ${boundingBoxMinX},&#xd;
-            &quot;minY&quot;: ${boundingBoxMinY}&#xd;
-        }&#xd;
-    },&#xd;
-    &quot;contacts&quot;: [&#xd;
-        {&#xd;
-            &quot;name&quot;: &quot;${pocName}&quot;,&#xd;
-            &quot;type&quot;: &quot;Point of Contact&quot;,&#xd;
-            &quot;email&quot;: &quot;poc_email@usgs.ov&quot;,&#xd;
-            &quot;organization&quot;: {&quot;displayText&quot;: &quot;USGS&quot;},&#xd;
-            &quot;primaryLocation&quot;: {&#xd;
-                &quot;officePhone&quot;: &quot;(123) 123-1234&quot;,&#xd;
-                &quot;streetAddress&quot;: {},&#xd;
-                &quot;mailAddress&quot;: {&#xd;
-                    &quot;line1&quot;: &quot;Natural Resources, 480 Wilson Rd. Rm 13&quot;,&#xd;
-                    &quot;city&quot;: &quot;East Lansing&quot;,&#xd;
-                    &quot;state&quot;: &quot;MI&quot;,&#xd;
-                    &quot;zip&quot;: &quot;48824&quot;&#xd;
-                }&#xd;
-            }&#xd;
-        },&#xd;
-        {&#xd;
-            &quot;name&quot;: &quot;${pocName} and others&quot;,&#xd;
-            &quot;type&quot;: &quot;Originator&quot;,&#xd;
-            &quot;organization&quot;: {},&#xd;
-            &quot;primaryLocation&quot;: {&#xd;
-                &quot;streetAddress&quot;: {},&#xd;
-                &quot;mailAddress&quot;: {}&#xd;
-            }&#xd;
-        }&#xd;
-    ],&#xd;
-    &quot;browseCategories&quot;: [&quot;${browseCategory}&quot;],&#xd;
-    &quot;tags&quot;: [&#xd;
-        {&#xd;
-            &quot;type&quot;: &quot;Label&quot;,&#xd;
-            &quot;scheme&quot;: &quot;https://www.sciencebase.gov/vocab/GLRI/keyword&quot;,&#xd;
-            &quot;name&quot;: &quot;${keyword1}&quot;&#xd;
-        },&#xd;
-        {&#xd;
-            &quot;type&quot;: &quot;Label&quot;,&#xd;
-            &quot;scheme&quot;: &quot;https://www.sciencebase.gov/vocab/GLRI/location-type&quot;,&#xd;
-            &quot;name&quot;: &quot;${locationType}&quot;&#xd;
-        },&#xd;
-        {&#xd;
-            &quot;type&quot;: &quot;Label&quot;,&#xd;
-            &quot;scheme&quot;: &quot;https://www.sciencebase.gov/vocab/GLRI/location-name&quot;,&#xd;
-            &quot;name&quot;: &quot;${locationName}&quot;&#xd;
-        },&#xd;
-        {&#xd;
-            &quot;type&quot;: &quot;Label&quot;,&#xd;
-            &quot;scheme&quot;: &quot;https://www.sciencebase.gov/vocab/GLRI/focus-area&quot;,&#xd;
-            &quot;name&quot;: &quot;${focus}&quot;&#xd;
-        },&#xd;
-        {&#xd;
-            &quot;type&quot;: &quot;Label&quot;,&#xd;
-            &quot;scheme&quot;: &quot;https://www.sciencebase.gov/vocab/GLRI/data-status&quot;,&#xd;
-            &quot;name&quot;: &quot;Fake Sample Data&quot;&#xd;
-        }&#xd;
-    ],&#xd;
-    &quot;dates&quot;: [&#xd;
-        {&#xd;
-            &quot;type&quot;: &quot;Publication&quot;,&#xd;
-            &quot;dateString&quot;: &quot;2013&quot;,&#xd;
-            &quot;label&quot;: &quot;Publication Date&quot;&#xd;
-        },&#xd;
-        {&#xd;
-            &quot;type&quot;: &quot;Start&quot;,&#xd;
-            &quot;dateString&quot;: &quot;2000&quot;,&#xd;
-            &quot;label&quot;: &quot;&quot;&#xd;
-        },&#xd;
-        {&#xd;
-            &quot;type&quot;: &quot;End&quot;,&#xd;
-            &quot;dateString&quot;: &quot;2007&quot;,&#xd;
-            &quot;label&quot;: &quot;&quot;&#xd;
-        }&#xd;
-    ],&#xd;
-    &quot;distributionLinks&quot;: [&#xd;
-        {&#xd;
-            &quot;uri&quot;: &quot;https://www.sciencebase.gov/catalogMaps/mapping/ows/50f6baf1e4b0f5392eb80d85?mode=download&amp;request=kml&amp;service=wms&amp;layers=nfhap_hci_fhp_glb&quot;,&#xd;
-            &quot;title&quot;: &quot;KML Service&quot;,&#xd;
-            &quot;type&quot;: &quot;kml&quot;,&#xd;
-            &quot;typeLabel&quot;: &quot;KML Download&quot;,&#xd;
-            &quot;rel&quot;: &quot;alternate&quot;&#xd;
-        },&#xd;
-        {&#xd;
-            &quot;uri&quot;: &quot;https://www.sciencebase.gov/catalogMaps/mapping/ows/50f6baf1e4b0f5392eb80d85?service=wms&amp;request=getcapabilities&amp;version=1.3.0&quot;,&#xd;
-            &quot;title&quot;: &quot;ScienceBase WMS Service&quot;,&#xd;
-            &quot;type&quot;: &quot;serviceCapabilitiesUrl&quot;,&#xd;
-            &quot;typeLabel&quot;: &quot;OGC Service Capabilities URL&quot;,&#xd;
-            &quot;rel&quot;: &quot;alternate&quot;&#xd;
-        },&#xd;
-        {&#xd;
-            &quot;uri&quot;: &quot;https://www.sciencebase.gov/catalogMaps/mapping/ows/50f6baf1e4b0f5392eb80d85?service=wfs&amp;request=getcapabilities&amp;version=1.0.0&quot;,&#xd;
-            &quot;title&quot;: &quot;ScienceBase WFS Service&quot;,&#xd;
-            &quot;type&quot;: &quot;serviceCapabilitiesUrl&quot;,&#xd;
-            &quot;typeLabel&quot;: &quot;OGC Service Capabilities URL&quot;,&#xd;
-            &quot;rel&quot;: &quot;alternate&quot;&#xd;
-        }&#xd;
-    ]&#xd;
-}&#xd;
-&#xd;
-</stringProp>
+                  <stringProp name="Argument.value"></stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -2028,7 +1912,7 @@
    &quot;title&quot;:&quot;${name}&quot;,&#xd;
    &quot;summary&quot;:&quot;${description}&quot;,&#xd;
    &quot;body&quot;:&quot;${description}&quot;,&#xd;
-   &quot;purpose&quot;:&quot;Test Record ${ds_id} (purpose)&quot;,&#xd;
+   &quot;purpose&quot;:&quot;${purpose}&quot;,&#xd;
    &quot;parentId&quot;:&quot;${community-id}&quot;,&#xd;
    &quot;spatial&quot;:{&#xd;
       &quot;representationalPoint&quot;:&quot;${representationalPointX},${representationalPointY}&quot;,&#xd;
@@ -2044,47 +1928,47 @@
       {&#xd;
          &quot;name&quot;:&quot;${piName}&quot;,&#xd;
          &quot;type&quot;:&quot;Principle Investigator&quot;,&#xd;
-         &quot;email&quot;:&quot;pi_email@usgs.gov&quot;,&#xd;
+         &quot;email&quot;:&quot;${email}&quot;,&#xd;
          &quot;organization&quot;:{&#xd;
             &quot;displayText&quot;:&quot;USGS&quot;&#xd;
          },&#xd;
          &quot;primaryLocation&quot;:{&#xd;
-            &quot;officePhone&quot;:&quot;(123) 123-1234&quot;,&#xd;
+            &quot;officePhone&quot;:&quot;&quot;,&#xd;
             &quot;streetAddress&quot;:{&#xd;
 &#xd;
             },&#xd;
             &quot;mailAddress&quot;:{&#xd;
-               &quot;line1&quot;:&quot;Natural Resources, 480 Wilson Rd. Rm 13&quot;,&#xd;
-               &quot;city&quot;:&quot;East Lansing&quot;,&#xd;
-               &quot;state&quot;:&quot;MI&quot;,&#xd;
-               &quot;zip&quot;:&quot;48824&quot;&#xd;
+               &quot;line1&quot;:&quot;&quot;,&#xd;
+               &quot;city&quot;:&quot;&quot;,&#xd;
+               &quot;state&quot;:&quot;&quot;,&#xd;
+               &quot;zip&quot;:&quot;&quot;&#xd;
             }&#xd;
          }&#xd;
       },&#xd;
       {&#xd;
          &quot;name&quot;:&quot;${apcName}&quot;,&#xd;
          &quot;type&quot;:&quot;Associate Project Chief&quot;,&#xd;
-         &quot;email&quot;:&quot;apc_email@usgs.gov&quot;,&#xd;
+         &quot;email&quot;:&quot;&quot;,&#xd;
          &quot;organization&quot;:{&#xd;
             &quot;displayText&quot;:&quot;USGS&quot;&#xd;
          },&#xd;
          &quot;primaryLocation&quot;:{&#xd;
-            &quot;officePhone&quot;:&quot;(123) 123-1234&quot;,&#xd;
+            &quot;officePhone&quot;:&quot;&quot;,&#xd;
             &quot;streetAddress&quot;:{&#xd;
 &#xd;
             },&#xd;
             &quot;mailAddress&quot;:{&#xd;
-               &quot;line1&quot;:&quot;Natural Resources, 480 Wilson Rd. Rm 13&quot;,&#xd;
-               &quot;city&quot;:&quot;East Lansing&quot;,&#xd;
-               &quot;state&quot;:&quot;MI&quot;,&#xd;
-               &quot;zip&quot;:&quot;48824&quot;&#xd;
+               &quot;line1&quot;:&quot;&quot;,&#xd;
+               &quot;city&quot;:&quot;&quot;,&#xd;
+               &quot;state&quot;:&quot;&quot;,&#xd;
+               &quot;zip&quot;:&quot;&quot;&#xd;
             }&#xd;
          }&#xd;
       },&#xd;
       {&#xd;
-         &quot;name&quot;:&quot;${cpName1} and others&quot;,&#xd;
+         &quot;name&quot;:&quot;${cpName1}&quot;,&#xd;
          &quot;type&quot;:&quot;Cooperator/Partner&quot;,&#xd;
-         &quot;email&quot;:&quot;poc_email@usgs.gov&quot;,&#xd;
+         &quot;email&quot;:&quot;&quot;,&#xd;
          &quot;organization&quot;:{&#xd;
 &#xd;
          },&#xd;
@@ -2098,9 +1982,9 @@
          }&#xd;
       },&#xd;
       {&#xd;
-         &quot;name&quot;:&quot;${cpName2} and others&quot;,&#xd;
+         &quot;name&quot;:&quot;${cpName2}&quot;,&#xd;
          &quot;type&quot;:&quot;Cooperator/Partner&quot;,&#xd;
-         &quot;email&quot;:&quot;poc_email@usgs.gov&quot;,&#xd;
+         &quot;email&quot;:&quot;&quot;,&#xd;
          &quot;organization&quot;:{&#xd;
 &#xd;
          },&#xd;
@@ -2114,9 +1998,9 @@
          }&#xd;
       },&#xd;
       {&#xd;
-         &quot;name&quot;:&quot;${cpName3} and others&quot;,&#xd;
+         &quot;name&quot;:&quot;${cpName3}&quot;,&#xd;
          &quot;type&quot;:&quot;Cooperator/Partner&quot;,&#xd;
-         &quot;email&quot;:&quot;poc_email@usgs.gov&quot;,&#xd;
+         &quot;email&quot;:&quot;&quot;,&#xd;
          &quot;organization&quot;:{&#xd;
 &#xd;
          },&#xd;
@@ -2186,21 +2070,24 @@
          &quot;type&quot;:&quot;webLink&quot;,&#xd;
          &quot;typeLabel&quot;:&quot;Web Link&quot;,&#xd;
          &quot;uri&quot;:&quot;${projectWebURL1}&quot;,&#xd;
-         &quot;title&quot;:&quot;${projectWebTitle1}&quot;,&#xd;
+         &quot;title&quot;:&quot;Project Home Page&quot;,&#xd;
+		 &quot;rel&quot;: &quot;home&quot;,&#xd;
          &quot;hidden&quot;:false&#xd;
       },&#xd;
       {&#xd;
          &quot;type&quot;:&quot;webLink&quot;,&#xd;
          &quot;typeLabel&quot;:&quot;Web Link&quot;,&#xd;
          &quot;uri&quot;:&quot;${projectWebURL2}&quot;,&#xd;
-         &quot;title&quot;:&quot;${projectWebTitle2}&quot;,&#xd;
+         &quot;title&quot;:&quot;Related Resource&quot;,&#xd;
+		 &quot;rel&quot;: &quot;relatedResouce&quot;,&#xd;
          &quot;hidden&quot;:false&#xd;
       },&#xd;
       {&#xd;
          &quot;type&quot;:&quot;webLink&quot;,&#xd;
          &quot;typeLabel&quot;:&quot;Web Link&quot;,&#xd;
          &quot;uri&quot;:&quot;${projectWebURL3}&quot;,&#xd;
-         &quot;title&quot;:&quot;${projectWebTitle3}&quot;,&#xd;
+         &quot;title&quot;:&quot;Related Resource&quot;,&#xd;
+		 &quot;rel&quot;: &quot;relatedResource&quot;,&#xd;
          &quot;hidden&quot;:false&#xd;
       }&#xd;
    ],&#xd;
@@ -2280,31 +2167,21 @@
       },&#xd;
       {&#xd;
          &quot;type&quot;:&quot;Label&quot;,&#xd;
-         &quot;scheme&quot;:&quot;https://www.sciencebase.gov/vocab/GLRI/sigl-project-focus&quot;,&#xd;
-         &quot;name&quot;:&quot;${siglFocus}&quot;&#xd;
-      },&#xd;
-      {&#xd;
-         &quot;type&quot;:&quot;Label&quot;,&#xd;
          &quot;scheme&quot;:&quot;https://www.sciencebase.gov/vocab/GLRI/data-status&quot;,&#xd;
-         &quot;name&quot;:&quot;Fake Sample Data&quot;&#xd;
+         &quot;name&quot;:&quot;Uploaded in Batch&quot;&#xd;
       }&#xd;
    ],&#xd;
    &quot;dates&quot;:[&#xd;
       {&#xd;
-         &quot;type&quot;:&quot;Publication&quot;,&#xd;
-         &quot;dateString&quot;:&quot;2013&quot;,&#xd;
-         &quot;label&quot;:&quot;Publication Date&quot;&#xd;
-      },&#xd;
-      {&#xd;
          &quot;type&quot;:&quot;Start&quot;,&#xd;
-         &quot;dateString&quot;:&quot;2000&quot;,&#xd;
-         &quot;label&quot;:&quot;&quot;&#xd;
+         &quot;dateString&quot;:&quot;${projectStartDate}&quot;,&#xd;
+         &quot;label&quot;:&quot;Project Start Date&quot;&#xd;
       },&#xd;
       {&#xd;
          &quot;type&quot;:&quot;End&quot;,&#xd;
-         &quot;dateString&quot;:&quot;2007&quot;,&#xd;
-         &quot;label&quot;:&quot;&quot;&#xd;
-      }&#xd;
+         &quot;dateString&quot;:&quot;${projectEndDate}&quot;,&#xd;
+         &quot;label&quot;:&quot;Project End Date&quot;&#xd;
+      },&#xd;
    ],&#xd;
    &quot;facets&quot;:[&#xd;
       {&#xd;
@@ -2391,7 +2268,7 @@
             <hashTree/>
           </hashTree>
         </hashTree>
-        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Delete All Test Records" enabled="true"/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Delete All Test Records" enabled="false"/>
         <hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Find All Test Records" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
@@ -2412,7 +2289,7 @@
                 </elementProp>
                 <elementProp name="filter" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">true</boolProp>
-                  <stringProp name="Argument.value">tags={scheme:&apos;https://www.sciencebase.gov/vocab/GLRI/data-status&apos;,name:&apos;Fake Sample Data&apos;}</stringProp>
+                  <stringProp name="Argument.value">tags={scheme:&apos;https://www.sciencebase.gov/vocab/GLRI/data-status&apos;,name:&apos;Uploaded in Batch&apos;}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                   <boolProp name="HTTPArgument.use_equals">true</boolProp>
                   <stringProp name="Argument.name">filter</stringProp>
